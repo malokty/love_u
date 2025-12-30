@@ -36,17 +36,22 @@ button{
 </head>
 <body>
 <div class="card">
-<h2>🔒 Welcome malokty</h2>
-<p>To enter, type our special date ❤️</p>
-<input type="text" id="pass" placeholder="e.g.">
+<h2> Welcome malokty</h2>
+<p>To enter, type the first date we spoke❤️</p>
 <input type="text" id="pass" placeholder="Enter date">
-<p id="errorMsg" style="display:none; color:#ff4d6d; text-align:center; margin:8px 0;">
-  غلط يا 🙃
-</p>
+<p id="errorMsg" style="display:none; color:#ff4d6d; text-align:center; margin:8px 0;"></p>
 <button onclick="go()">Unlock ❤️</button>
 </div>
 
 <script>
+const messages = [
+  "غلط يما",
+  "ركزي شويه",
+  "لا كدا قلة ادب",
+  "هنهزر",
+  "لا لا مش هينفع كدا"
+];
+
 function go(){
   const pass = document.getElementById('pass').value;
   const errorMsg = document.getElementById('errorMsg');
@@ -54,6 +59,8 @@ function go(){
   if(pass === '15/3'){
     window.location = 'home.html';
   } else {
+    const randomMsg = messages[Math.floor(Math.random() * messages.length)];
+    errorMsg.textContent = randomMsg;
     errorMsg.style.display = 'block';
   }
 }
