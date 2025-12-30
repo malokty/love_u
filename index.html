@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Welcome ❤️</title>
+<style>
+body{
+  background: linear-gradient(#fbc2eb,#a6c1ee);
+  font-family: Arial;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+.card{
+  background:#fff;
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  width:300px;
+}
+input,button{
+  padding:12px;
+  width:100%;
+  margin-top:10px;
+  border-radius:25px;
+  border:1px solid #ddd;
+}
+button{
+  background:#ff5fa2;
+  color:#fff;
+  border:none;
+  font-size:16px;
+}
+</style>
+</head>
+<body>
+<div class="card">
+<h2>🔒 Welcome Laila</h2>
+<p>To enter, type our special date ❤️</p>
+<input type="text" id="pass" placeholder="e.g. 15/5">
+<button onclick="go()">Unlock ❤️</button>
+</div>
+
+<script>
+function go(){
+ if(document.getElementById('pass').value==='15/5'){
+   window.location='home.html';
+ }else{
+   alert('Wrong date 😅');
+ }
+}
+</script>
+</body>
+</html>
