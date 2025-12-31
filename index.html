@@ -37,7 +37,7 @@ button{
 <body>
 <div class="card">
   <h2>Welcome malokty</h2>
-  <p>To enter, type the first date we spoke❤️</p>
+  <p>Enter your Birthday❤️</p>
 
   <input type="text" id="pass" placeholder="Enter date">
 
@@ -50,7 +50,7 @@ button{
        style="display:none; color:#000; background:#ffd6e0;
               padding:8px; border-radius:8px;
               text-align:center; margin-top:8px;">
-    💡 Hint: تاريخ اول مرة اتكلمنا
+    💡 Hint: Birthday
   </div>
 
   <button onclick="go()">Unlock ❤️</button>
@@ -74,7 +74,7 @@ function go(){
 
   console.log("Attempts:", attempts); // للتأكد إن العداد بيزيد
 
-  if(pass === '15/3'){
+  if(pass === '8/8'){
     window.location = 'home.html';
   } else {
     attempts++;
