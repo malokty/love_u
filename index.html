@@ -36,11 +36,19 @@ button{
 </head>
 <body>
 <div class="card">
-<h2> Welcome malokty</h2>
-<p>To enter, type the first date we spoke❤️</p>
-<input type="text" id="pass" placeholder="Enter date">
-<p id="errorMsg" style="display:none; color:#ff4d6d; text-align:center; margin:8px 0;"></p>
-<button onclick="go()">Unlock ❤️</button>
+  <h2>Welcome malokty</h2>
+  <p>To enter, type the first date we spoke❤️</p>
+
+  <input type="text" id="pass" placeholder="Enter date">
+
+  <p id="errorMsg" style="display:none; color:#ff4d6d; text-align:center; margin:8px 0;"></p>
+
+  <!-- بوكس الـ Hint -->
+  <div id="hintBox" style="display:none; color:#ffd6e0; text-align:center; margin-top:6px;">
+    💡 Hint: اليوم قبل الشهر 😉
+  </div>
+
+  <button onclick="go()">Unlock ❤️</button>
 </div>
 
 <script>
@@ -52,19 +60,29 @@ const messages = [
   "لا لا مش هينفع كدا"
 ];
 
+let attempts = 0; // عداد الغلطات
+
 function go(){
   const pass = document.getElementById('pass').value;
   const errorMsg = document.getElementById('errorMsg');
+  const hintBox = document.getElementById('hintBox');
 
   if(pass === '15/3'){
     window.location = 'home.html';
   } else {
+    attempts++;
+
     const randomMsg = messages[Math.floor(Math.random() * messages.length)];
     errorMsg.textContent = randomMsg;
     errorMsg.style.display = 'block';
+
+    // يظهر الـ hint بعد تاني غلطة
+    if(attempts >= 2){
+      hintBox.style.display = 'block';
+    }
   }
 }
 </script>
-
 </body>
+
 </html>
