@@ -41,10 +41,15 @@ button{
 
   <input type="text" id="pass" placeholder="Enter date">
 
-  <p id="errorMsg" style="display:none; color:#ff4d6d; text-align:center; margin:8px 0;"></p>
+  <p id="errorMsg"
+     style="display:none; color:#ff4d6d; text-align:center; margin:8px 0;">
+  </p>
 
   <!-- بوكس الـ Hint -->
-  <div id="hintBox" style="display:none; color:#ffd6e0; text-align:center; margin-top:6px;">
+  <div id="hintBox"
+       style="display:none; color:#000; background:#ffd6e0;
+              padding:8px; border-radius:8px;
+              text-align:center; margin-top:8px;">
     💡 Hint: اليوم قبل الشهر 😉
   </div>
 
@@ -60,12 +65,14 @@ const messages = [
   "لا لا مش هينفع كدا"
 ];
 
-let attempts = 0; // عداد الغلطات
+let attempts = 0;
 
 function go(){
   const pass = document.getElementById('pass').value;
   const errorMsg = document.getElementById('errorMsg');
   const hintBox = document.getElementById('hintBox');
+
+  console.log("Attempts:", attempts); // للتأكد إن العداد بيزيد
 
   if(pass === '15/3'){
     window.location = 'home.html';
@@ -76,7 +83,6 @@ function go(){
     errorMsg.textContent = randomMsg;
     errorMsg.style.display = 'block';
 
-    // يظهر الـ hint بعد تاني غلطة
     if(attempts >= 2){
       hintBox.style.display = 'block';
     }
@@ -84,5 +90,6 @@ function go(){
 }
 </script>
 </body>
+
 
 </html>
